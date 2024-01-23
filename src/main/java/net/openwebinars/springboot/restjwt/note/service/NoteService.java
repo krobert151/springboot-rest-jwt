@@ -17,6 +17,11 @@ public class NoteService {
 
     private final NoteRepository repository;
 
+
+    public List<Note> findByAuthor(String author){
+        return repository.findByAuthor(author);
+    }
+
     public List<NotesGroupedByTagsDto> notesGroupedByTagsDtoList(String author) {
         List<Note> notes = repository.findByAuthor(author);
 

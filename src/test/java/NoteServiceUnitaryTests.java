@@ -31,7 +31,7 @@ public class NoteServiceUnitaryTests {
                 Note.builder()
                          .title("Manolo Note")
                          .content("Manolo Note Content")
-                         .author("Manolo")
+                         .author("cc8c43d0-651f-43ad-8827-69b1afffa524")
                          .important(true)
                          .createdAt(LocalDateTime.now())
                          .tags(List.of("AA","BB","CC"))
@@ -39,7 +39,7 @@ public class NoteServiceUnitaryTests {
                 Note.builder()
                         .title("Manolo Note2")
                         .content("Manolo Note Content2")
-                        .author("Manolo")
+                        .author("cc8c43d0-651f-43ad-8827-69b1afffa524")
                         .important(true)
                         .createdAt(LocalDateTime.now())
                         .tags(List.of("AA","CC"))
@@ -47,7 +47,7 @@ public class NoteServiceUnitaryTests {
                 Note.builder()
                         .title("Manolo Note3")
                         .content("Manolo Note Content3")
-                        .author("Manolo")
+                        .author("cc8c43d0-651f-43ad-8827-69b1afffa524")
                         .important(true)
                         .createdAt(LocalDateTime.now())
                         .tags(List.of("BB","CC"))
@@ -55,7 +55,7 @@ public class NoteServiceUnitaryTests {
                 Note.builder()
                         .title("Manolo Note4")
                         .content("Manolo Note Content4")
-                        .author("Manolo")
+                        .author("cc8c43d0-651f-43ad-8827-69b1afffa524")
                         .important(true)
                         .createdAt(LocalDateTime.now())
                         .tags(List.of("CC"))
@@ -63,7 +63,7 @@ public class NoteServiceUnitaryTests {
                 Note.builder()
                         .title("Manolo Note5")
                         .content("Manolo Note Content5")
-                        .author("Manolo")
+                        .author("cc8c43d0-651f-43ad-8827-69b1afffa524")
                         .important(true)
                         .createdAt(LocalDateTime.now())
                         .tags(List.of("AA"))
@@ -80,9 +80,9 @@ public class NoteServiceUnitaryTests {
     void notesGroupedByTagsDtoList_returnsNull(){
         List<Note> notes = new ArrayList<>();
 
-        Mockito.when(repository.findByAuthor("Manolo")).thenReturn(notes);
+        Mockito.when(repository.findByAuthor("cc8c43d0-651f-43ad-8827-69b1afffa524")).thenReturn(notes);
 
-        Assertions.assertNull(noteService.notesGroupedByTagsDtoList("Manolo"));
+        Assertions.assertNull(noteService.notesGroupedByTagsDtoList("cc8c43d0-651f-43ad-8827-69b1afffa524"));
 
     }
 
@@ -93,7 +93,7 @@ public class NoteServiceUnitaryTests {
                 Note.builder()
                         .title("Manolo Note")
                         .content("Manolo Note Content")
-                        .author("Manolo")
+                        .author("cc8c43d0-651f-43ad-8827-69b1afffa524")
                         .important(true)
                         .createdAt(LocalDateTime.now())
                         .tags(List.of("AA","BB","CC"))
@@ -101,17 +101,17 @@ public class NoteServiceUnitaryTests {
                 Note.builder()
                         .title("Manolo Note4")
                         .content("Manolo Note Content4")
-                        .author("Manolo")
+                        .author("cc8c43d0-651f-43ad-8827-69b1afffa524")
                         .important(true)
                         .createdAt(LocalDateTime.now())
                         .tags(List.of())
                         .build()
         );
 
-        Mockito.when(repository.findByAuthor("Manolo")).thenReturn(notes);
+        Mockito.when(repository.findByAuthor("cc8c43d0-651f-43ad-8827-69b1afffa524")).thenReturn(notes);
 
-        Assertions.assertEquals(3,noteService.notesGroupedByTagsDtoList("Manolo").size());
-        Assertions.assertEquals(1,noteService.notesGroupedByTagsDtoList("Manolo").get(0).notes().size());
+        Assertions.assertEquals(3,noteService.notesGroupedByTagsDtoList("cc8c43d0-651f-43ad-8827-69b1afffa524").size());
+        Assertions.assertEquals(1,noteService.notesGroupedByTagsDtoList("cc8c43d0-651f-43ad-8827-69b1afffa524").get(0).notes().size());
 
     }
 
